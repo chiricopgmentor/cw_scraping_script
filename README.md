@@ -7,7 +7,11 @@
 ### ２．Googleの設定で安全性の低いアプリのアクセスを許可してください。
 （アカウント管理→セキュリティ）
 
-### ３．cw_scraping_script.exeを実行
+### ChromeDriverの配置
+https://chromedriver.chromium.org/downloadsからChromeのバージョンに合ったChromeDriverをダウンロードして、
+cw_scraping_script.exeと同じディレクトリに配置してください。
+
+### ４．cw_scraping_script.exeを実行
 初回起動時に「cw_job_log_category_XX.txt」といったファイルが生成され、新着メール通知が来ます。
 2回目以降は新着があった時だけメール通知します。
 新着を確認したい時に起動するか、後述のタスクスケジューラに登録して自動化してください。
