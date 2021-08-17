@@ -8,7 +8,8 @@
 （アカウント管理→セキュリティ）
 
 ### ３．ChromeDriverの配置
-https://chromedriver.chromium.org/downloadsからChromeのバージョンに合ったChromeDriverをダウンロードして、
+https://chromedriver.chromium.org/downloads から
+Chromeのバージョンに合ったChromeDriverをダウンロードして、
 cw_scraping_script.exeと同じディレクトリに配置してください。
 
 ### ４．cw_scraping_script.exeを実行
