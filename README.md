@@ -7,7 +7,7 @@
 ### ２．Googleの設定で安全性の低いアプリのアクセスを許可してください。
 （アカウント管理→セキュリティ）
 
-### ChromeDriverの配置
+### ３．ChromeDriverの配置
 https://chromedriver.chromium.org/downloadsからChromeのバージョンに合ったChromeDriverをダウンロードして、
 cw_scraping_script.exeと同じディレクトリに配置してください。
 
