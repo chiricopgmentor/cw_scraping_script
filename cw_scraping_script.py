@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service as ChromeService
-from subprocess import CREATE_NO_WINDOW
+# from subprocess import CREATE_NO_WINDOW
 from email.mime.text import MIMEText
 import smtplib
 import configparser
@@ -50,6 +50,7 @@ options = Options()
 options.add_argument('--headless')
 chromedriver_path = os.path.dirname(os.path.abspath(sys.argv[0])) + '\chromedriver.exe'
 driver = webdriver.Chrome(executable_path=chromedriver_path, chrome_options=options)
+time.sleep(2)
 
 # ログイン
 cw_login_page_url = 'https://crowdworks.jp/login?ref=toppage_hedder'
@@ -81,6 +82,7 @@ for cw_category_id in cw_category_id_list:
     # 今回結果取得
     job_offer_id_list_present = []
     driver.get('https://crowdworks.jp/public/jobs/search?category_id=' + cw_category_id + '&keep_search_criteria=true&order=new&hide_expired=true')
+    time.sleep(2)
     elems = driver.find_elements_by_xpath("//li[@data-job_offer_id]")
     for elem in elems:
         job_offer_id_list_present.append(elem.get_attribute('data-job_offer_id'))
