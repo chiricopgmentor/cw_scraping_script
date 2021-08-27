@@ -3,8 +3,6 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service as ChromeService
-# from subprocess import CREATE_NO_WINDOW
 from email.mime.text import MIMEText
 import smtplib
 import configparser
@@ -29,8 +27,14 @@ def send_gmail(send_subject, send_message):
     server.send_message(msg)
     server.quit()
 
-# 同一ディレクトリのconfig.iniを読み込む
-congigfile_path = os.path.dirname(os.path.abspath(sys.argv[0])) + '\config.ini'
+# 実行ファイルのディレクトリパスを取得
+directory_path = os.path.dirname(os.path.abspath(sys.argv[0]))
+
+# 引数があればディレクトリパスを受け取る
+if len(sys.argv) > 1:
+    directory_path = sys.argv[1]
+
+congigfile_path = directory_path + os.sep +'config.ini'
 config = configparser.RawConfigParser()
 config.read(congigfile_path)
 
@@ -48,7 +52,9 @@ cw_category_id_list = json.loads(config.get(cw_category_id, 'cw_category_id_list
 # Chromedriver設定
 options = Options()
 options.add_argument('--headless')
-chromedriver_path = os.path.dirname(os.path.abspath(sys.argv[0])) + '\chromedriver.exe'
+chromedriver_path = directory_path + os.sep +'chromedriver'
+if os.name == 'nt':
+    chromedriver_path = chromedriver_path + '.exe'
 driver = webdriver.Chrome(executable_path=chromedriver_path, chrome_options=options)
 time.sleep(2)
 
@@ -70,7 +76,7 @@ html_body = ""
 
 # カテゴリごとにページ情報チェック
 for cw_category_id in cw_category_id_list:
-    logfile_path = os.path.dirname(os.path.abspath(sys.argv[0])) + '/cw_job_log_category_' + cw_category_id +'.txt'
+    logfile_path = directory_path + os.sep +'cw_job_log_category_' + cw_category_id +'.txt'
 
     #前回結果読み込み
     job_offer_id_list_previous = []
