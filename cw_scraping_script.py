@@ -89,7 +89,7 @@ for cw_category_id in cw_category_id_list:
     job_offer_id_list_present = []
     driver.get('https://crowdworks.jp/public/jobs/search?category_id=' + cw_category_id + '&keep_search_criteria=true&order=new&hide_expired=true')
     time.sleep(2)
-    elems = driver.find_elements_by_xpath("//li[@data-job_offer_id]")
+    elems = driver.find_elements_by_xpath("//li[@data-job_offer_id]") # TODO クラス名のみで取得
     for elem in elems:
         job_offer_id_list_present.append(elem.get_attribute('data-job_offer_id'))
 
