@@ -52,6 +52,13 @@ cw_scraping_script.pyファイルを保存したディレクトリまでのパ�
 <StartInterVal>の下の300という数字は更新間隔（秒）です。<br>
 デフォルトは300秒（5分）置きなので、お好みに変更してください。<br>
 
+設定が済んだら下記のコマンドを実行してください。<br>
+$ launchctl load /Library/LaunchAgents/cw_scraping_script.plist<br>
+<br>
+停止するまで定時実行するようになります。<br>
+停止する時は下記の通りです。<br>
+$ launchctl unload /Library/LaunchAgents/cw_scraping_script.plist<br>
+
 ３．ダウンロードしたアプリケーションの実行許可<br>
 ターミナルで下記のコマンドを実行してください。<br>
 $ sudo spctl --master-disable<br>
