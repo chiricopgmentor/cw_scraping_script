@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>cw_scraping_script</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Library/Frameworks/Python.framework/Versions/3.9/bin/python3</string>
+        <string>/自分の環境に合わせて書き換えてください/cw_scraping_script.py</string>
+    </array>
+    <key>StartInterval</key>
+    <integer>300</integer>
+    <key>StandardOutPath</key>
+    <string>/自分の環境に合わせて書き換えてください/cw_scraping_script.out</string>
+    <key>StandardErrorPath</key>
+    <string>/自分の環境に合わせて書き換えてください/cw_scraping_script.err</string>
+</dict>
+</plist>
